@@ -12,23 +12,20 @@ console.log(sumTwoSmallestNumbers(1, 3, 2));
 console.log(sumTwoSmallestNumbers(1));
 
 
-function createCalculator(x) {
+function createCalculator(initialValue) {
+    let initialArgument = initialValue;
     return {
-        sum: function(y) {
-            let sum = x + y;
-            return x = sum;
+        sum: function(internalValue) {
+            return initialArgument += internalValue;
         },
-        mult: function(y) {
-            let mult = x * y;
-            return x = mult;
+        mult: function(internalValue) {
+            return initialArgument *= internalValue;
         },
-        sub: function(y) {
-            let sub = x - y;
-            return x = sub;
+        sub: function(internalValue) {
+            return initialArgument -= internalValue;
         },
-        div: function(y) {
-            let div = x / y;
-            return x = div;
+        div: function(internalValue) {
+            return initialArgument /= internalValue;
         },
     };  
 };
